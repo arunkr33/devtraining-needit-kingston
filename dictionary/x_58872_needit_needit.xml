@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database>
-    <element extends="task" label="NeedIt" max_length="40" name="x_58872_needit_needit" type="collection"/>
+    <element extends="task" label="NeedIt" max_length="40" name="x_58872_needit_needit" type="collection">
+        <element attributes="edge_encryption_enabled=true" choice="1" default="atlanta" label="Your location" mandatory="true" max_length="40" name="u_location" type="string">
+            <choice>
+                <element label="Atlanta" sequence="0" value="atlanta"/>
+                <element label="MSP" sequence="1" value="msp"/>
+                <element label="Other" sequence="2" value="other"/>
+            </choice>
+        </element>
+        <element label="Requested for" mandatory="true" max_length="32" name="u_requested_for" reference="sys_user" type="reference"/>
+        <element label="When needed" mandatory="true" max_length="40" name="u_when_needed" type="glide_date_time"/>
+    </element>
 </database>
